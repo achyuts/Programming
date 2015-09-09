@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class GraphDS {
 
-	private int graphSize;
+	private int v;  // no. of vertices
 	private ArrayList<GraphNode> graphNodes;
 	
 	// Graph Node structure
@@ -40,7 +40,7 @@ public class GraphDS {
 	}
 	
 	public GraphDS(int v){
-		graphSize = v;
+		this.v = v;
 		graphNodes = new ArrayList<GraphDS.GraphNode>();
 		for(int i=1; i<=v; i++)
 			graphNodes.add(new GraphNode(i));	
@@ -51,7 +51,7 @@ public class GraphDS {
 	}
 	
 	public int getGraphSize(){
-		return graphSize;
+		return v;
 	}
 	
 	// Undirected Graph A-B, B-A
@@ -66,7 +66,7 @@ public class GraphDS {
 	}
 	
 	public boolean insertEdge(int startNode, int endNode){
-		if(startNode > 0 && startNode <= graphSize && endNode > 0 && endNode <= graphSize){
+		if(startNode > 0 && startNode <= v && endNode > 0 && endNode <= v){
 			insertEdge(graphNodes.get(startNode), graphNodes.get(endNode));
 			return true;
 		}
@@ -94,7 +94,7 @@ public class GraphDS {
 	    	return false;
 	    
 	    ArrayList<GraphNode> nodeQueue = new ArrayList<GraphNode>();
-	    Queue
+	    
 	    
 	    
 	    return true;
