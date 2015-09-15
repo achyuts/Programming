@@ -5,10 +5,10 @@ public class GraphNode {
 		private int val;
 		private GraphNode parent;
 		
-		private visited visited;
+		private Visited visited;
 		private int depth;
 		
-		enum visited{
+		enum Visited{
 			white, gray, black
 		};
 		
@@ -33,7 +33,7 @@ public class GraphNode {
 	    	return depth;
 	    }
 	    
-	    public visited getVisitedStatus(){
+	    public Visited getVisitedStatus(){
 	    	return visited;
 	    }
 	    
@@ -53,7 +53,7 @@ public class GraphNode {
 	    	return true;
 	    }
 	    
-	    public void setVisitedStatus(visited visit){
+	    public void setVisitedStatus(Visited visit){
 	    	visited = visit;
 	    }
 	    

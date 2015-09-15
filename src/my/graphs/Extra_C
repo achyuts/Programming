@@ -1,0 +1,109 @@
+/*// finding a cycle in a graph and printing the cycle
+	// wud be running dfs
+	
+    public void dfs_cycle() {
+		// Instead of color value to check for visited/unvisited vertices, we are using visited boolean array
+		boolean[] visited = new boolean[v]; // default assigned to false
+		//ArrayList<GraphNode> ans = new ArrayList<GraphNode>();
+		MyStackList<GraphNode> stackVisited = new MyStackList<GraphNode>();
+		//ArrayList<GraphNode> recursionStackNodes = new ArrayList<GraphNode>();
+		
+		boolean isCyclePresent = false;
+		
+		for(int i=0; i<v; i++) {
+			if(visited[i] == false){
+				isCyclePresent = dfs_visit_cycle(nodes.get(i), visited, stackVisited);
+			    if(isCyclePresent){
+			    	
+			    	for(GraphNode n: stackVisited){
+			    		System.out.println("node value->"+n.getValue());
+			    	}
+			    	
+			    	break;
+			    }
+			}
+		}
+		
+		if(!isCyclePresent)
+		    System.out.println("No cycle found in graph");		
+	}
+
+	private boolean dfs_visit_cycle(GraphNode n, boolean[] visited, MyStackList<GraphNode> stackVisited) {
+		stackVisited.add(n);
+		visited[n.getValue()] = true;
+		
+		for(GraphNode node: adjacencyList.get(n.getValue())){
+		    if(visited[node.getValue()] == false)	
+			    return dfs_visit_cycle(node, visited, stackVisited);
+		    else{
+		    	
+		    	// found a cycle
+		    	//+System.out.println("There is a cycle in graph");
+		    	
+		    	// printing the cycle
+		    	//+System.out.println("Cycle Elements-->");
+		    	
+		    	//+
+		    	while(stackVisited.size() > 0){
+		    		GraphNode gn = stackVisited.pop();
+		    		System.out.println(gn.getValue());
+		    	}
+		    	
+		    	if(stackVisited.contains(node)){
+		    		System.out.println("There is a cycle in graph");
+		    		//GraphNode gn = stackVisited.pop();
+		    		//System.out.println(gn.getValue());
+		    	}
+		    	
+		    	
+		    	return true;
+		    	
+		    }
+		    	
+		}
+		stackVisited.pop();  //+
+		return false;
+	}
+	
+	
+	
+	public void dfs_find_cycle() {
+		
+		MyStackList<GraphNode> stackVisited = new MyStackList<GraphNode>();
+		boolean[] visited = new boolean[v];
+		ArrayList<GraphNode> ans = new ArrayList<GraphNode>();
+		
+		int seed_node = 0;
+		while(seed_node < v && visited[seed_node] == true){
+			seed_node++;
+		}
+		
+		stackVisited.push(nodes.get(seed_node));
+		visited[seed_node] = true;
+		ans.add(nodes.get(seed_node));
+		
+		while(stackVisited.size() > 0){
+			GraphNode gg = stackVisited.top();
+			
+			for(GraphNode n: adjacencyList.get(gg.getValue())){
+	        	if(stackVisited.contains(n)){
+	        	    System.out.println("Found Cycle");
+	        	    
+	        	    for(GraphNode nn:stackVisited){
+	        	    	System.out.println(nn.getValue()+" ");
+	        	    }
+	        	    
+	        	} else if(visited[n.getValue()]){
+	        		
+	        		System.out.println("Already visited node");
+	        	} else {
+	        		
+	        		stackVisited.push(n);	        		
+	        	}	        	
+	        	
+	        }
+		}
+			
+	}
+	*/
+	
